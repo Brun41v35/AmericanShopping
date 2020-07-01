@@ -33,7 +33,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6B4-jd-cO0">
                                                 <rect key="frame" x="128" y="175" width="196" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entre com seus gastos nos EUA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="rPN-jX-o6a">
                                                 <rect key="frame" x="50" y="129" width="314" height="24"/>
@@ -105,6 +105,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Compras" image="bag" id="jnC-wh-jbo"/>
+                    <connections>
+                        <outlet property="lbDescription" destination="DLI-X2-MG6" id="8Jj-rt-ypu"/>
+                        <outlet property="lbReal" destination="gFk-eh-cuh" id="UZV-Qi-0Yt"/>
+                        <outlet property="tfDolar" destination="6B4-jd-cO0" id="da9-kS-tJZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,7 +142,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rt3-jr-zxg">
                                                 <rect key="frame" x="0.0" y="40" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -153,7 +158,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="45l-fc-f9c">
                                                 <rect key="frame" x="0.0" y="40" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -169,7 +174,7 @@
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sFM-56-ERo">
                                                 <rect key="frame" x="0.0" y="40" width="374" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -189,6 +194,11 @@
                         <viewLayoutGuide key="safeArea" id="FTM-H9-mW2"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Configuracoes" image="settings" id="RGc-eD-Fnb"/>
+                    <connections>
+                        <outlet property="tfDolar" destination="rt3-jr-zxg" id="wXW-QZ-0cD"/>
+                        <outlet property="tfIOF" destination="45l-fc-f9c" id="0DK-n2-34S"/>
+                        <outlet property="tfStateTaxes" destination="sFM-56-ERo" id="i4I-tL-rIe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qDI-r2-cIy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -219,7 +229,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="US$ 0,00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4d-mw-S4z">
-                                        <rect key="frame" x="347" y="88" width="86" height="24"/>
+                                        <rect key="frame" x="308" y="88" width="86" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -261,7 +271,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="udI-ez-nnp">
-                                        <rect key="frame" x="345" y="118" width="51" height="31"/>
+                                        <rect key="frame" x="345" y="118.5" width="51" height="31"/>
+                                        <connections>
+                                            <action selector="changeIOF:" destination="gKH-9k-cFe" eventType="valueChanged" id="89r-y9-ZBF"/>
+                                        </connections>
                                     </switch>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IOF(6.38%)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeF-93-n0H">
                                         <rect key="frame" x="20" y="88" width="103" height="24"/>
@@ -305,6 +318,15 @@
                         <viewLayoutGuide key="safeArea" id="lQK-Dg-g9V"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Impostos" image="taxes" id="z6x-5O-sYs"/>
+                    <connections>
+                        <outlet property="lbDolar" destination="IK1-kI-NO0" id="FJC-jK-9Pp"/>
+                        <outlet property="lbIOF" destination="y4d-mw-S4z" id="BVm-0f-URG"/>
+                        <outlet property="lbIOFDescription" destination="DeF-93-n0H" id="rYM-ZE-noD"/>
+                        <outlet property="lbReal" destination="61z-77-bVx" id="oXC-hW-a8g"/>
+                        <outlet property="lbStateTex" destination="TOe-nl-urF" id="XIk-fO-lQG"/>
+                        <outlet property="lbStateTexDescription" destination="Ee5-FI-eka" id="EaW-5z-YM6"/>
+                        <outlet property="swCreditCard" destination="udI-ez-nnp" id="OeF-td-ccO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sfa-Q0-0Yg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
